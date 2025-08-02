@@ -1,0 +1,509 @@
+@font-face {
+  font-display: swap;
+  font-family: Dokdo;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Dokdo-Regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: Jua;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Jua-Regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: Julee;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Julee-Regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: Nerko;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/NerkoOne-Regular.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  margin: 0;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  color: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+.main__sqreen {
+  position: relative;
+  background-image: url("./assets/img/main-bg.png");
+  background-size: cover; /* или contain, в зависимости от задачи */
+  background-repeat: no-repeat;
+  width: 100%; /* или фиксированная ширина */
+  height: 1373px;
+}
+
+.container {
+  max-width: 1800px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.main-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 91px;
+}
+
+.header__btn {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 121%;
+  font-family: Nerko;
+  border-radius: 43px;
+  padding: 6px 12px;
+  background: #fff;
+  opacity: 0.7;
+  color: transparent;
+  -webkit-text-stroke: 3px #006fa5;
+  /* text-stroke: 1.5px black; */
+}
+
+.info {
+  padding-top: 120px;
+  padding-bottom: 77px;
+}
+
+.info__title {
+  font-family: Julee;
+  font-weight: 400;
+  font-size: 95px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 86px;
+  text-align: center;
+}
+.info__subtitle {
+  font-family: Dokdo;
+  font-weight: 400;
+  font-size: 31px;
+  color: #000;
+  max-width: 1700px;
+  margin-bottom: 60px;
+}
+
+.info__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__item {
+  max-width: 845px;
+}
+
+.info__item-title {
+  font-family: Julee;
+  font-weight: 400;
+  font-size: 47px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.info__item-text {
+  font-family: Dokdo;
+  font-weight: 400;
+  font-size: 31px;
+  color: #000;
+}
+
+.info_item-img-dragon {
+  width: 852px;
+  height: 471px;
+  margin: 57px 0 59px;
+}
+
+.info_item-img-sheap {
+  width: 434px;
+  height: 533px;
+}
+.info__item-text__wrapper {
+  display: flex;
+  column-gap: 40px;
+  margin: 25px 0 25px;
+}
+
+.how {
+  background-color: #ff97ad;
+  border-top: 12px solid #03004e;
+  border-bottom: 12px solid #03004e;
+  padding: 74px 0 80px;
+}
+
+.how__title {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 155px;
+  color: #fff;
+  text-shadow: 6px 6px 2px rgba(3, 0, 78, 0.25);
+  -webkit-text-stroke: 4px #03004e;
+  text-align: center;
+  margin-bottom: 98px;
+}
+
+.how__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+}
+
+.how__item {
+  border: 13px solid #03004e;
+  border-radius: 150px;
+  background: #fff;
+  height: 589px;
+  padding: 89px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 44px;
+}
+
+.how__item-title {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 43px;
+  text-align: center;
+  color: #03004e;
+  border-radius: 40px;
+  padding: 10px;
+  width: 318px;
+  height: 131px;
+  background: #ffe0e7;
+}
+
+.how__item-text {
+  font-family: Jua;
+  font-weight: 400;
+  font-size: 33px;
+  text-align: center;
+  color: #000;
+}
+
+.island {
+  position: relative;
+}
+
+.island img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.tail {
+  width: 150px;
+  position: absolute;
+  z-index: 2;
+  left: 150px;
+  bottom: 180px;
+}
+
+.closed-chest {
+  width: 190px;
+  position: absolute;
+  z-index: 3;
+  right: 36%;
+  bottom: 27%;
+}
+
+.opened-chest {
+  width: 190px;
+  position: absolute;
+  z-index: 2;
+  right: 36%;
+  bottom: 27%;
+  opacity: 0;
+}
+.note {
+  width: 76px;
+  position: absolute;
+  z-index: 2;
+  right: 39%;
+  bottom: 34%;
+  opacity: 0;
+}
+.shell {
+  width: 76px;
+  position: absolute;
+  z-index: 3;
+  left: 34%;
+  bottom: 19%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+@keyframes flySpinDisappear {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-150px, 100px) rotate(-1080deg); /* 3 оборота (360*3) и подлет влево вверх */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, 150px) rotate(-1080deg);
+    opacity: 0; /* Исчезает */
+  }
+}
+
+.animate-fly-spin {
+  animation: flySpinDisappear 1.5s forwards ease-in;
+}
+
+.key {
+  width: 53px;
+  position: absolute;
+  z-index: 1;
+  left: 35%;
+  bottom: 20%;
+  cursor: grab;
+}
+
+.tokens {
+  border-top: 12px solid #03004e;
+  border-bottom: 12px solid #03004e;
+  background: #ffcb63;
+  padding: 90px 0 130px;
+  position: relative;
+  z-index: 1;
+}
+
+.tokens__container {
+  z-index: 3;
+  position: relative;
+}
+.tokens__title {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 155px;
+  color: #fff;
+  text-shadow: 5px 5px 1px rgba(3, 0, 78, 0.25);
+  -webkit-text-stroke: 4px #03004e;
+  text-align: center;
+  margin-bottom: 122px;
+}
+.tokens__items {
+  display: grid;
+  grid-template-columns: repeat(2, 447px);
+  gap: 64px 48px;
+  margin-bottom: 38px;
+  justify-content: center;
+}
+.tokens__item {
+  border: 6px solid #03004e;
+  border-radius: 40px;
+  padding: 50px 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #fff;
+  height: 174px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokens__item-title {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 44%;
+  color: #03004e;
+  margin-bottom: 20px;
+}
+
+.tokens__item-text {
+  font-family: Jua;
+  font-weight: 400;
+  font-size: 38px;
+  color: #000;
+}
+
+.tokens__subtitle {
+  font-family: Jua;
+  font-weight: 400;
+  font-size: 46px;
+  color: #fff;
+  text-align: center;
+}
+
+.tokens__fish {
+  position: absolute;
+  z-index: 2;
+  top: -39px;
+  width: 100%;
+}
+
+.team {
+  padding: 69px 0;
+  background: #b2ffea;
+}
+
+.team__letter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* по желанию, для центрирования */
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 245px;
+  -webkit-text-stroke: 4px #03004e;
+  color: #fff;
+  text-shadow: 7px 7px 2px rgba(3, 0, 78, 0.25);
+  line-height: 0.9;
+}
+.team__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(380px, 441px));
+  gap: 43px 48px;
+}
+
+.team__card {
+  border: 10px solid #03004e;
+  border-radius: 60px;
+  background: #fff;
+  padding: 34px 21px;
+}
+
+.team__card-img {
+  width: 378px;
+  height: 378px;
+  margin-bottom: 17px;
+}
+
+.team__card-name {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 80%;
+  text-align: center;
+  color: #060096;
+}
+
+.team__card-post {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 80%;
+  text-align: center;
+  color: #2820ff;
+}
+
+.ceremoni img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  border-top: 12px solid #03004e;
+  background: linear-gradient(180deg, #0700b4 0%, #03004e 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__fish {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  height: 100%;
+}
+
+.footer__inner {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  justify-content: space-between;
+}
+
+.footer__info {
+  margin-top: 100px;
+  width: 24%;
+}
+
+.footer__title {
+  font-family: Nerko;
+  font-weight: 400;
+  font-size: 64px;
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+  margin-bottom: 40px;
+}
+
+.footer__dragon {
+  width: 60%;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.footer__title-second {
+  margin-bottom: 150px;
+}
+
+.footer__subtitle {
+  font-family: Jua;
+  font-weight: 400;
+  font-size: 43px;
+  text-align: center;
+  color: #fff;
+  max-width: 273px;
+}
