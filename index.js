@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(Draggable);
-
+  // const cursor = document.querySelector(".typed-cursor--blink");
+  // cursor.remove();
   const island = document.querySelector(".island");
   const key = document.querySelector(".key");
   const closedChest = document.querySelector(".closed-chest");
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ) {
         // Запускаем анимацию открытия сундука
         closedChest.style.opacity = "0";
+        closedChest.style.width = "0";
         openedChest.style.opacity = "1";
         note.style.opacity = "1";
         key.style.opacity = "0";
@@ -47,22 +49,74 @@ document.addEventListener("DOMContentLoaded", (event) => {
       { once: true }
     );
   });
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Запускаем Typed.js только когда элемент виден
+          new Typed(entry.target, {
+            strings: [entry.target.dataset.text],
+            typeSpeed: 10, // скорость печати (мс на символ)
+            loop: false,
+            autoInsertCss: false, // отключаем авто-стили для курсора, чтобы использовать свои
+          });
+
+          observer.unobserve(entry.target); // Отключаем наблюдение, чтобы не запускать повторно
+        }
+      });
+    },
+    { threshold: 0.5 }
+  ); // 50% видимости
+  document.querySelectorAll("#type-text-title").forEach((el) => {
+    observer.observe(el);
+  });
+
+  const button = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  const exit = document.querySelector(".exit");
+  // Открываем/закрываем меню по кнопке меню
+  button.addEventListener("click", () => {
+    menu.classList.add("open");
+  });
+
+  // Закрываем меню по кнопке крестика
+  exit.addEventListener("click", () => {
+    menu.classList.remove("open");
+  });
+
+  // Закрываем меню по нажатию клавиши Esc
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.key === "Esc") {
+      menu.classList.remove("open");
+    }
+  });
+
+  const openBtn = document.getElementById("open-modal-btn");
+  const modal = document.getElementById("modal");
+  const closeBtn = document.getElementById("close-modal-btn");
+
+  // Открыть модальное окно
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("open");
+  });
+
+  // // Закрыть модальное окно по кнопке "×"
+  // closeBtn.addEventListener("click", () => {
+  //   modal.classList.remove("open");
+  // });
+
+  // Закрыть модальное окно при клике вне содержимого
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+
+  // Закрыть модальное окно по нажатию клавиши Esc
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) {
+      modal.classList.remove("open");
+    }
+  });
 });
-
-// // Разрешаем дроп на сундук
-// closedChest.addEventListener("dragover", (e) => {
-//   e.preventDefault();
-// });
-
-// // Обработка дропа ключа на сундук
-// closedChest.addEventListener("drop", (e) => {
-//   e.preventDefault();
-
-//   // Запускаем анимацию открытия сундука
-//   closedChest.style.opacity = "0";
-//   openedChest.style.opacity = "1";
-//   note.style.opacity = "1";
-
-//   // Можно дополнительно скрыть ключ или сделать что-то еще
-//   key.style.display = "none";
-// });
