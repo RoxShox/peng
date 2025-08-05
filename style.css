@@ -97,7 +97,6 @@ p {
   top: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #094b6a;
   border-radius: 30px;
 }
 .blob-btn:after {
@@ -136,7 +135,7 @@ p {
   position: relative;
   display: block;
   height: 100%;
-  filter: url("#goo");
+  /* filter: url("#goo"); */
 }
 .blob-btn__blob {
   position: absolute;
@@ -145,14 +144,14 @@ p {
   height: 100%;
   background: #094b6a;
   border-radius: 100%;
-  transform: translate3d(0, 150%, 0) scale(1.7);
+  transform: translateY(150%) scale(1.4);
   transition: transform 0.45s;
 }
-@supports (filter: url("#goo")) {
+/* @supports (filter: url("#goo")) {
   .blob-btn__blob {
     transform: translate3d(0, 150%, 0) scale(1.4);
   }
-}
+} */
 .blob-btn__blob:nth-child(1) {
   left: 0%;
   transition-delay: 0s;
@@ -172,11 +171,11 @@ p {
 .blob-btn:hover .blob-btn__blob {
   transform: translateZ(0) scale(1.7);
 }
-@supports (filter: url("#goo")) {
+/* @supports (filter: url("#goo")) {
   .blob-btn:hover .blob-btn__blob {
     transform: translateZ(0) scale(1.4);
   }
-}
+} */
 
 .main__sqreen {
   position: relative;
@@ -301,6 +300,8 @@ p {
   border-top: 12px solid #03004e;
   border-bottom: 12px solid #03004e;
   padding: 74px 0 80px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .how__title {
@@ -942,6 +943,20 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 
+.coin1 {
+  position: absolute;
+  left: 140px;
+  top: 58px;
+  width: 250px;
+}
+
+.coin2 {
+  position: absolute;
+  right: 60px;
+  top: 76px;
+  width: 270px;
+}
+
 @media (max-width: 1600px) {
   .menu__list {
     margin-left: 50px;
@@ -965,6 +980,8 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
   .note {
     width: 42px;
+    bottom: 32%;
+    right: 38%;
   }
 }
 @media (max-width: 1500px) {
@@ -995,9 +1012,24 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     line-height: 80%;
     margin-bottom: 28px;
   }
+  .coin1 {
+    left: 30px;
+    top: 18px;
+    width: 200px;
+  }
+  .coin2 {
+    right: 20px;
+    top: 36px;
+    width: 220px;
+  }
 }
 
 @media (max-width: 1400px) {
+  .note {
+    width: 42px;
+    bottom: 33%;
+    right: 39%;
+  }
   .crab {
     width: 86px;
   }
@@ -1050,8 +1082,24 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   .team__cards {
     grid-template-columns: repeat(1, minmax(320px, 441px));
   }
+  .coin1 {
+    left: -10px;
+    top: 28px;
+    width: 160px;
+  }
+  .coin2 {
+    right: -7px;
+    top: 36px;
+    width: 190px;
+  }
 }
 @media (max-width: 1024px) {
+  .coin1 {
+    display: none;
+  }
+  .coin2 {
+    display: none;
+  }
   .crab {
     width: 56px;
   }
@@ -1067,7 +1115,7 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     width: 70px;
   }
   .note {
-    width: 40px;
+    width: 35px;
     right: 38%;
     bottom: 32%;
   }
@@ -1343,6 +1391,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     left: 33%;
     bottom: 19%;
   }
+  .note {
+    bottom: 34%;
+  }
 }
 @media (max-width: 500px) {
   .island img {
@@ -1405,6 +1456,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     width: 35px;
     bottom: 70px;
     left: 18px;
+  }
+  .note {
+    bottom: 32%;
   }
 }
 
