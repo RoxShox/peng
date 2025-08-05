@@ -31,7 +31,7 @@
         (this.onResize = function () {
           var t = this.canvas;
           //   (this.maxW = window.innerWidth),
-          //     (this.maxH = window.innerHeight),
+          this.maxH = window.innerHeight;
           //     (t.width = this.maxW),
           //     (t.height = this.maxH);
           //   for (var i = this.particles, s = 0; s < i.length; s++)
@@ -53,10 +53,12 @@
           }
         });
       var n = function (i, s, h) {
+        const curHeight = window.innerWidth > 768 ? 0.5 : 0.3;
+
         return (
           (this.id = i),
           (this.x = Math.random() * s),
-          (this.y = Math.random() * h * 0.5),
+          (this.y = Math.random() * h * curHeight),
           (this.radius = 1 + Math.random() * 2),
           (this.alpha = Math.random()),
           (this.velocity = 0.05 * this.radius),

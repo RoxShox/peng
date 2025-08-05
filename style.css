@@ -186,6 +186,13 @@ p {
   width: 100%; /* или фиксированная ширина */
   height: 1496px;
   overflow-x: hidden;
+  background-position: right;
+}
+
+.main-dragon {
+  width: 780px;
+  position: absolute;
+  bottom: 6%;
 }
 
 .container {
@@ -903,6 +910,20 @@ html:not(.touch) .team__card-wrap:hover .team__card {
 .team__mobile-title {
   display: none;
 }
+
+.penguin {
+  animation: jump 1s ease-in-out infinite;
+}
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
 @media (max-width: 1600px) {
   .menu__list {
     margin-left: 50px;
@@ -1120,6 +1141,10 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 768px) {
+  .main__sqreen {
+    background-image: url("./assets/img/main-mobile-bg.PNG");
+    height: 1016px;
+  }
   .penguin {
     width: 56px;
   }
@@ -1326,5 +1351,8 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
   .tokens__title {
     font-size: 70px;
+  }
+  .team__card-img {
+    height: 338px;
   }
 }

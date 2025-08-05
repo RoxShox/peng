@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           // Запускаем Typed.js только когда элемент виден
           new Typed(entry.target, {
             strings: [entry.target.dataset.text],
-            typeSpeed: 10, // скорость печати (мс на символ)
+            typeSpeed: 30, // скорость печати (мс на символ)
             loop: false,
             autoInsertCss: false, // отключаем авто-стили для курсора, чтобы использовать свои
           });
