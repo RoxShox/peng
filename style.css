@@ -129,7 +129,7 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  background: #ffffff;
+  background: #fff; /* сплошной цвет */
 }
 .blob-btn__blobs {
   position: relative;
@@ -740,7 +740,7 @@ html:not(.touch) .team__card-wrap:hover .team__card {
 
 .footer__info {
   margin-top: 100px;
-  width: 24%;
+  width: 38%;
   display: flex;
   flex-direction: column;
   align-items: center;
