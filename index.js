@@ -1,4 +1,12 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  preloader.style.opacity = "0";
+  preloader.style.transition = "opacity 0.5s ease";
+
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500); // время совпадает с переходом opacity
+
   gsap.registerPlugin(Draggable);
   // const cursor = document.querySelector(".typed-cursor--blink");
   // cursor.remove();
@@ -42,9 +50,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     shell.addEventListener(
       "animationend",
       () => {
-        shell.style.display = "none"; // Скрываем элемент после анимации
-        // Если хотите, чтобы можно было анимировать повторно, вместо display:none используйте:
-        // shell.classList.remove('animate-fly-spin');
+        shell.style.display = "none";
       },
       { once: true }
     );
@@ -59,7 +65,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             strings: [entry.target.dataset.text],
             typeSpeed: 30, // скорость печати (мс на символ)
             loop: false,
-            autoInsertCss: false, // отключаем авто-стили для курсора, чтобы использовать свои
+            showCursor: false,
           });
 
           observer.unobserve(entry.target); // Отключаем наблюдение, чтобы не запускать повторно
@@ -88,6 +94,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Закрываем меню по нажатию клавиши Esc
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" || event.key === "Esc") {
+      menu.classList.remove("open");
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    // Если меню открыто и клик НЕ по меню и НЕ по кнопке меню — закрываем
+    if (
+      menu.classList.contains("open") &&
+      !menu.contains(target) &&
+      target !== button
+    ) {
       menu.classList.remove("open");
     }
   });
