@@ -176,4 +176,14 @@ window.addEventListener("load", function () {
         console.error("Ошибка при копировании: ", err);
       });
   });
+
+  const menuLinks = menu.querySelectorAll(".menu__item");
+
+  // Для каждой ссылки добавляем обработчик клика
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Убираем класс активности меню (закрываем меню)
+      menu.classList.remove("open");
+    });
+  });
 });

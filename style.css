@@ -251,6 +251,10 @@ p {
   padding: 0 20px;
 }
 
+.how__item-text a {
+  text-decoration: underline;
+}
+
 .island {
   position: relative;
 }
@@ -664,10 +668,17 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   display: flex;
   align-items: center;
   margin-bottom: 90px;
+  column-gap: 50px;
 }
 
 .footer__title-second {
   margin-bottom: 150px;
+  transition: all 0.3s;
+}
+.footer__title:hover {
+  -webkit-text-stroke: 2px #28c8ff;
+
+  cursor: pointer;
 }
 
 .footer__subtitle {
@@ -870,6 +881,7 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   display: flex;
   justify-content: space-between;
   max-width: 1600px;
+  padding: 0 20px;
 }
 
 .navbar ul li {
@@ -960,6 +972,19 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s ease;
+  padding-top: 91px;
+  z-index: 999;
+}
+.navbar.hidden {
+  top: -500px;
 }
 
 @media (max-width: 1600px) {
@@ -1231,6 +1256,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 768px) {
+  .navbar {
+    padding-top: 30px;
+  }
   .tokens__subtitle {
     font-size: 16px;
   }
@@ -1597,17 +1625,3 @@ html:not(.touch) .team__card-wrap:hover .team__card {
 .load-dragon {
   width: 200px;
 }
-
-/* .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: top 0.3s ease;
-  padding-top: 91px;
-  z-index: 999;
-} */
-/* Скрываем меню, сдвигая его вверх */
-/* .navbar.hidden {
-  top: -500px;
-} */
