@@ -2405,12 +2405,16 @@
                       <img src="./assets/img/exit.png" alt="" />
                     </button>
                     <ul class="menu__list">
-                      <li class="menu__item"><a href="#">FISHING</a></li>
-                      <li class="menu__item"><a href="#">HOW TO BUY</a></li>
-                      <li class="menu__item"><a href="#">TREASURE </a></li>
-                      <li class="menu__item"><a href="#">TOKENOMICS</a></li>
-                      <li class="menu__item"><a href="#">SHRINE</a></li>
-                      <li class="menu__item"><a href="#">CORE TEAM</a></li>
+                      <li class="menu__item"><a href="#main">FISHING</a></li>
+                      <li class="menu__item"><a href="#how">HOW TO BUY</a></li>
+                      <li class="menu__item">
+                        <a href="#island">TREASURE </a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="#tokenomics">TOKENOMICS</a>
+                      </li>
+                      <li class="menu__item"><a href="#ceremoni">SHRINE</a></li>
+                      <li class="menu__item"><a href="#core">CORE TEAM</a></li>
                     </ul>
                   </nav>
                   <div class="menu-info">
@@ -2470,79 +2474,92 @@
                     </div>
                   </div>
                 </div>
-                <div class="buttons">
-                  <button class="blob-btn" id="menu-btn">
-                    MENU
-                    <span class="blob-btn__inner">
-                      <span class="blob-btn__blobs">
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
-                      </span>
-                    </span>
-                  </button>
-                  <br />
+                <div class="navbar">
+                  <ul class="menu__btn" id="navbar">
+                    <li id="menu-btn">
+                      MENU
+                      <span></span><span></span><span></span><span></span>
+                    </li>
+                    <li>
+                      BUY $JIAO
+                      <span></span><span></span><span></span><span></span>
+                    </li>
+                  </ul>
 
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                      <filter id="goo">
-                        <feGaussianBlur
-                          in="SourceGraphic"
-                          result="blur"
-                          stdDeviation="10"
-                        ></feGaussianBlur>
-                        <feColorMatrix
-                          in="blur"
-                          mode="matrix"
-                          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
-                          result="goo"
-                        ></feColorMatrix>
-                        <feBlend
-                          in2="goo"
-                          in="SourceGraphic"
-                          result="mix"
-                        ></feBlend>
-                      </filter>
-                    </defs>
-                  </svg>
-                </div>
-                <div class="buttons">
-                  <button class="blob-btn">
-                    BUY $JIAO
-                    <span class="blob-btn__inner">
-                      <span class="blob-btn__blobs">
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
-                        <span class="blob-btn__blob"></span>
+                  <!-- <div class="buttons" id="navbar">
+                    <button class="blob-btn" id="menu-btn">
+                      MENU
+                      <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                        </span>
                       </span>
-                    </span>
-                  </button>
-                  <br />
+                    </button>
+                    <br />
 
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                      <filter id="goo">
-                        <feGaussianBlur
-                          in="SourceGraphic"
-                          result="blur"
-                          stdDeviation="10"
-                        ></feGaussianBlur>
-                        <feColorMatrix
-                          in="blur"
-                          mode="matrix"
-                          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
-                          result="goo"
-                        ></feColorMatrix>
-                        <feBlend
-                          in2="goo"
-                          in="SourceGraphic"
-                          result="mix"
-                        ></feBlend>
-                      </filter>
-                    </defs>
-                  </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter id="goo">
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            result="blur"
+                            stdDeviation="10"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+                            result="goo"
+                          ></feColorMatrix>
+                          <feBlend
+                            in2="goo"
+                            in="SourceGraphic"
+                            result="mix"
+                          ></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="buttons">
+                    <button class="blob-btn">
+                      BUY $JIAO
+                      <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                        </span>
+                      </span>
+                    </button>
+                    <br />
+
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter id="goo">
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            result="blur"
+                            stdDeviation="10"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+                            result="goo"
+                          ></feColorMatrix>
+                          <feBlend
+                            in2="goo"
+                            in="SourceGraphic"
+                            result="mix"
+                          ></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -2633,7 +2650,7 @@
         </div>
       </div>
 
-      <div class="how">
+      <div class="how" id="how">
         <img src="./assets/img/coin-1.PNG" alt="" class="coin1" />
         <img src="./assets/img/coin-2.PNG" alt="" class="coin2" />
         <div class="container">
@@ -2676,7 +2693,7 @@
         </div>
       </div>
 
-      <div class="island">
+      <div class="island" id="island">
         <img src="./assets/img/penguin-island.png" alt="" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -4341,7 +4358,7 @@
         </svg>
       </div>
 
-      <div class="tokens">
+      <div class="tokens" id="tokenomics">
         <img
           src="./assets/img/token-fish1.png"
           alt=""
@@ -4381,11 +4398,19 @@
               <p class="tokens__item-text">Locked</p>
             </div>
           </div>
-          <p class="tokens__subtitle">space for CA</p>
+          <div class="tokens__subtitle-wrap">
+            <p class="tokens__subtitle">
+              <span>CA:</span>
+              <span class="copied" id="textToCopy">
+                0xC6d8A772De3595e264CA7c30c4C638202704c6f8
+              </span>
+              <span class="popup" id="popup">Copied</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="team">
+      <div class="team" id="core">
         <div class="container">
           <h2
             class="team__mobile-title"
@@ -4466,7 +4491,7 @@
         </div>
       </div>
 
-      <div class="ceremoni">
+      <div class="ceremoni" id="ceremoni">
         <div id="star-container">
           <canvas id="star-field"></canvas>
         </div>

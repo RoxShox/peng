@@ -26,7 +26,9 @@
   font-weight: 400;
   src: url("./fonts/NerkoOne-Regular.woff") format("woff");
 }
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   box-sizing: border-box;
 }
@@ -72,110 +74,6 @@ p {
   position: absolute;
 }
 /* BLOB BUTTON */
-.buttons {
-  text-align: center;
-  border-radius: 30px;
-}
-.blob-btn {
-  position: relative;
-  font-weight: 400;
-  font-size: 60px;
-  line-height: 121%;
-  font-family: Nerko;
-  border-radius: 43px;
-  padding: 6px 12px;
-  background: #fff;
-  opacity: 0.7;
-  color: transparent;
-  -webkit-text-stroke: 3px #006fa5;
-}
-.blob-btn:before {
-  content: "";
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-}
-.blob-btn:after {
-  content: "";
-  z-index: -2;
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s 0.2s;
-  border-radius: 30px;
-}
-.blob-btn:hover {
-  color: #ffffff;
-  border-radius: 30px;
-}
-.blob-btn:hover:after {
-  transition: all 0.3s;
-  left: 0;
-  top: 0;
-  border-radius: 30px;
-}
-.blob-btn__inner {
-  z-index: -1;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background: #fff; /* сплошной цвет */
-}
-.blob-btn__blobs {
-  position: relative;
-  display: block;
-  height: 100%;
-  /* filter: url("#goo"); */
-}
-.blob-btn__blob {
-  position: absolute;
-  top: 2px;
-  width: 25%;
-  height: 100%;
-  background: #094b6a;
-  border-radius: 100%;
-  transform: translateY(150%) scale(1.4);
-  transition: transform 0.45s;
-}
-/* @supports (filter: url("#goo")) {
-  .blob-btn__blob {
-    transform: translate3d(0, 150%, 0) scale(1.4);
-  }
-} */
-.blob-btn__blob:nth-child(1) {
-  left: 0%;
-  transition-delay: 0s;
-}
-.blob-btn__blob:nth-child(2) {
-  left: 30%;
-  transition-delay: 0.08s;
-}
-.blob-btn__blob:nth-child(3) {
-  left: 60%;
-  transition-delay: 0.16s;
-}
-.blob-btn__blob:nth-child(4) {
-  left: 90%;
-  transition-delay: 0.24s;
-}
-.blob-btn:hover .blob-btn__blob {
-  transform: translateZ(0) scale(1.7);
-}
-/* @supports (filter: url("#goo")) {
-  .blob-btn:hover .blob-btn__blob {
-    transform: translateZ(0) scale(1.4);
-  }
-} */
 
 .main__sqreen {
   position: relative;
@@ -209,8 +107,6 @@ p {
 }
 
 .header__inner {
-  display: flex;
-  justify-content: space-between;
   padding-top: 91px;
 }
 
@@ -508,13 +404,18 @@ p {
   font-size: 38px;
   color: #000;
 }
-
+.tokens__subtitle-wrap {
+  display: flex;
+  justify-content: center;
+}
 .tokens__subtitle {
   font-family: Jua;
   font-weight: 400;
   font-size: 46px;
   color: #fff;
   text-align: center;
+  position: relative;
+  display: inline;
 }
 
 .tokens__fish {
@@ -819,6 +720,12 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   line-height: 81%;
   color: #fff;
   text-align: left;
+  transition: color 0.3s;
+}
+
+.menu__item:hover {
+  color: #28c8ff;
+  transition: color 0.3s;
 }
 
 .exit {
@@ -957,6 +864,104 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   width: 270px;
 }
 
+.navbar ul {
+  list-style-type: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1600px;
+}
+
+.navbar ul li {
+  --c: #006fa5;
+  color: var(--c);
+  font-size: 16px;
+  border: 1px solid var(--c);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  position: relative;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 121%;
+  font-family: Nerko;
+  border-radius: 43px;
+  padding: 6px 12px;
+  background: #fff;
+  color: transparent;
+  -webkit-text-stroke: 3px #006fa5;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.navbar ul li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.navbar ul li:hover {
+  -webkit-text-stroke: 3px #006fa5;
+  color: #fff;
+}
+
+.navbar ul li:hover span {
+  transform: translateY(0) scale(2);
+}
+
+.navbar ul li span:nth-child(1) {
+  --n: 1;
+}
+
+.navbar ul li span:nth-child(2) {
+  --n: 2;
+}
+
+.navbar ul li span:nth-child(3) {
+  --n: 3;
+}
+
+.navbar ul li span:nth-child(4) {
+  --n: 4;
+}
+
+.popup {
+  font-family: Jua;
+  border: 2px solid #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px;
+  color: #fff;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 5px;
+  background: #081113;
+}
+
+.popup-active {
+  width: auto;
+  top: 25px;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 1600px) {
   .menu__list {
     margin-left: 50px;
@@ -985,6 +990,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 1500px) {
+  .tokens__subtitle {
+    font-size: 36px;
+  }
   .info__item-text {
     font-size: 25px;
   }
@@ -1077,6 +1085,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   .footer__info {
     width: auto;
   }
+  .tokens__fish2 {
+    display: none;
+  }
 }
 @media (max-width: 1150px) {
   .team__cards {
@@ -1094,6 +1105,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 1024px) {
+  .tokens__subtitle {
+    font-size: 26px;
+  }
   .coin1 {
     display: none;
   }
@@ -1190,17 +1204,15 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     margin-bottom: 25px;
   }
 
-  .blob-btn {
+  .header__inner {
+    padding-top: 41px;
+  }
+  .navbar ul li {
     font-size: 43px;
     line-height: 121%;
     border-radius: 43px;
     padding: 2px 24px;
     -webkit-text-stroke: 2px #006fa5;
-  }
-  .header__inner {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 41px;
   }
 }
 @media (max-width: 900px) {
@@ -1219,6 +1231,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 768px) {
+  .tokens__subtitle {
+    font-size: 16px;
+  }
   .main__sqreen {
     background-image: url("./assets/img/main-mobile-bg.PNG");
     height: 1016px;
@@ -1396,6 +1411,9 @@ html:not(.touch) .team__card-wrap:hover .team__card {
   }
 }
 @media (max-width: 500px) {
+  .tokens__subtitle {
+    font-size: 12px;
+  }
   .island img {
     height: 400px;
   }
@@ -1419,7 +1437,7 @@ html:not(.touch) .team__card-wrap:hover .team__card {
     font-size: 25px;
     margin-bottom: 15px;
   }
-  .blob-btn {
+  .navbar ul li {
     font-size: 32px;
   }
   .buttons {
@@ -1579,3 +1597,17 @@ html:not(.touch) .team__card-wrap:hover .team__card {
 .load-dragon {
   width: 200px;
 }
+
+/* .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s ease;
+  padding-top: 91px;
+  z-index: 999;
+} */
+/* Скрываем меню, сдвигая его вверх */
+/* .navbar.hidden {
+  top: -500px;
+} */

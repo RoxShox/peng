@@ -137,4 +137,43 @@ window.addEventListener("load", function () {
       modal.classList.remove("open");
     }
   });
+
+  // menu scroll
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Скроллим вниз — скрываем меню
+      navbar.classList.add("hidden");
+    } else {
+      // Скроллим вверх — показываем меню
+      navbar.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Для корректной работы на iOS
+  });
+
+  let isCopying = false;
+  document.getElementById("textToCopy").addEventListener("click", function () {
+    if (isCopying) return;
+    isCopying = true;
+    const text = this.innerText;
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        const popup = document.getElementById("popup");
+        popup.classList.add("popup-active");
+        setTimeout(() => {
+          popup.classList.remove("popup-active");
+          isCopying = false;
+        }, 2000);
+        console.log("Текст скопирован в буфер обмена!");
+      })
+      .catch((err) => {
+        console.error("Ошибка при копировании: ", err);
+      });
+  });
 });
